@@ -65,3 +65,19 @@ Run below queries :
 { job : “Jewellery Designer” , employer : “Baldwin-Nichols”, first_name: "Sara"}
 
 { job : “Jewellery Designer” , first_name: "Sara", last_name: "Cook"}
+
+
+ESR Example for sample_mflix movies collection
+
+
+query = { amenities: "Waterfront",
+  "bed_type" : { $in : [ "Futon", "Real Bed" ] },
+  first_review : { $lt: ISODate("2018-12-31") },
+  last_review : { $gt : ISODate("2019-02-28") } 
+}
+project = { bedrooms:1 , price: 1, _id:0, "address.country":1}
+order = {bedrooms:-1,price:1}
+db.listingsAndReviews.find(query,project).sort(order)
+
+amenities_1_bedrooms_-1_price_1_bed_type_1_first_review_1_last_review_1
+
