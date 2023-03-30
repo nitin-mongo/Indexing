@@ -67,7 +67,7 @@ Run below queries :
 { job : “Jewellery Designer” , first_name: "Sara", last_name: "Cook"}
 
 
-ESR Example for sample_mflix movies collection
+===================  ESR Example for sample_mflix movies collection ==========================
 
 
 query = { amenities: "Waterfront",
